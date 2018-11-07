@@ -92,7 +92,17 @@ void NonceSplitter::gc()
         m_upstreams.pop_back();
     }
 }
+//custom 1 miner 1 upstream
+bool NonceSplitter::isUsed() const
+{
+    for (size_t i = 0; i < 500; ++i) {
+     if (m_used[i] > 0) {
+         return true;
+     }
+    }
 
+    return false;
+}
 
 void NonceSplitter::printConnections()
 {

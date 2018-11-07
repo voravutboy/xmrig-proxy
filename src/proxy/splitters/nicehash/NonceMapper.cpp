@@ -71,6 +71,10 @@ NonceMapper::~NonceMapper()
 
 bool NonceMapper::add(Miner *miner)
 {
+    //custom 1 miner 1 upstream
+    if(m_storage->isUsed()){
+        return false;
+    }
     if (!m_storage->add(miner)) {
         return false;
     }
