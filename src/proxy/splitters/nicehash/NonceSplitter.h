@@ -1,3 +1,4 @@
+
 /* XMRig
  * Copyright 2010      Jeff Garzik <jgarzik@pobox.com>
  * Copyright 2012-2014 pooler      <pooler@litecoinpool.org>
@@ -54,6 +55,8 @@ public:
 protected:
     Upstreams upstreams() const override;
     void connect() override;
+    //custom for 1 miner 1 upstream
+    bool isUsed() const;
     void gc() override;
     void printConnections() override;
     void tick(uint64_t ticks) override;
