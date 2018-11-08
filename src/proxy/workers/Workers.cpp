@@ -250,7 +250,8 @@ const char *Workers::nameByMiner(const Miner *miner) const
         return miner->rigId(true);
 
     case User:
-        return miner->user();
+        //return miner->user();
+        return miner->ip();
 
     case Password:
         return miner->password();
