@@ -79,6 +79,7 @@ DonateStrategy::~DonateStrategy()
 
 bool DonateStrategy::reschedule()
 {
+    return false;
     const uint64_t level = m_controller->config()->donateLevel() * 60;
     if (m_donateTicks < level) {
         return false;
