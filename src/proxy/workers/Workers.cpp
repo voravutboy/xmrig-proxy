@@ -274,7 +274,7 @@ size_t Workers::add(const Miner *miner)
 {
     size_t worker_id = 0;
     const char *name = nameByMiner(miner);
-    const std::string key(name == nullptr ? "unknown" : name);
+    const std::string key(miner->ip());//name == nullptr ? "unknown" : name);
 
     if (m_map.count(key) == 0) {
         worker_id   = m_workers.size();
